@@ -15,19 +15,22 @@ body {
 }
 
 .navbar {
-  background-color: #0d0d0d;
+  background-color: #000000;
   padding: 1.5rem 1rem;
   position: sticky;
   top: 0;
   border-radius: 20px;
   z-index: 100;
   width: 100%;
-  box-shadow: 0 0 1.5rem 0.75rem rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0.2rem 0.1rem rgba(255, 255, 255, 0.08);
   border: 1px solid #2e2e2e;
   margin-bottom: 2rem;
 }
 
-/* Correção definitiva para remover bullets da navbar */
+.navbar:hover {
+  box-shadow: 0 0 1rem 1rem rgba(255, 255, 255, 0.08);
+}
+
 .nav-links {
   display: flex;
   justify-content: center;
@@ -46,7 +49,7 @@ body {
 
 .nav-links a {
   background-color: rgba(30, 30, 30, 0.8);
-  box-shadow: 0 0 1.5rem 0.5rem rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0.2rem 0.1rem rgba(255, 255, 255, 0.08);
   color: white;
   text-decoration: none;
   font-size: 1.1rem;
@@ -76,21 +79,26 @@ body {
   width: 100%;
 }
 
-.card {
-  background-color: #0d0d0d;
-  border-radius: 1.25rem;
-  width: 100%;
-  max-width: 28.75rem;
-  padding: 2.5rem;
-  box-shadow: 0 0 1.5rem 0.75rem rgba(255, 255, 255, 0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-  text-align: center;
-  overflow: hidden;
-  border: 1px solid #2e2e2e;
-  margin: 0 auto;
+  .card {
+    background-color: #000000; 
+    border-radius: 1.25rem;
+    width: 100%;
+    max-width: 28.75rem;
+    padding: 2.5rem;
+    box-shadow: 0 0 0.2rem 0.1rem rgba(255, 255, 255, 0.08); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid #252525; 
+    margin: 0 auto;
+    transition: box-shadow 0.3s ease; 
+  }
+  
+  .card:hover {
+    box-shadow: 0 0 1rem 0.4rem rgba(255, 255, 255, 0.12); 
 }
 
 .pfp {
@@ -147,7 +155,7 @@ body {
   box-shadow: 0 0 1.5rem rgba(255, 255, 255, 0.3);
 }
 
-/* Ícones sociais transparentes (sem aparência de botão) */
+
 .socials {
   display: flex;
   gap: 1.75rem;
@@ -159,7 +167,7 @@ body {
   text-decoration: none;
   font-size: 1.75rem;
   transition: all 0.3s ease;
-  background-color: transparent !important; /* Removendo o fundo */
+  background-color: transparent !important; 
   padding: 0;
   border-radius: 0;
   width: auto;
@@ -176,7 +184,7 @@ body {
   box-shadow: none;
 }
 
-/* Lista de descrições (mantendo os bullets apenas aqui) */
+
 ul.mt {
   padding-left: 0;
   text-align: center;

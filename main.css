@@ -1,129 +1,236 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;500;700&display=swap');
+
+body {
+  background-color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #0d0d0d;
+  padding: 1.5rem 1rem;
+  position: sticky;
+  top: 0;
+  border-radius: 20px;
+  z-index: 100;
+  width: 100%;
+  box-shadow: 0 0 1.5rem 0.75rem rgba(255, 255, 255, 0.15);
+  border: 1px solid #2e2e2e;
+  margin-bottom: 2rem;
+}
+
+/* Correção definitiva para remover bullets da navbar */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.nav-links, 
+.nav-links li, 
+.nav-links ul {
+  list-style-type: none !important;
+  list-style: none !important;
+}
+
+.nav-links a {
+  background-color: rgba(30, 30, 30, 0.8);
+  box-shadow: 0 0 1.5rem 0.5rem rgba(255, 255, 255, 0.15);
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.75rem 1.75rem;
+  border-radius: 1.25rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 120px;
+  text-align: center;
+  display: inline-block;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 0 2rem 0.75rem rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.card {
+  background-color: #0d0d0d;
+  border-radius: 1.25rem;
+  width: 100%;
+  max-width: 28.75rem;
+  padding: 2.5rem;
+  box-shadow: 0 0 1.5rem 0.75rem rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid #2e2e2e;
+  margin: 0 auto;
+}
+
+.pfp {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  box-shadow: 0 0 2rem rgba(255, 255, 255, 0.4);
+  border: 2px solid #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.25rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  margin: 0.75rem 0;
+}
+
+.desc {
+  color: #e5e5e5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.7;
+  margin: 0.75rem 0;
+}
+
+.contact-btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 0.85rem 2.25rem;
+  border-radius: 1.25rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05rem;
+  margin: 0.75rem 0;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 0 1.25rem rgba(255, 255, 255, 0.2);
+}
+
+.contact-btn:hover {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 1.5rem rgba(255, 255, 255, 0.3);
+}
+
+/* Ícones sociais transparentes (sem aparência de botão) */
+.socials {
+  display: flex;
+  gap: 1.75rem;
+  margin: 1.25rem 0;
+}
+
+.socials a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.75rem;
+  transition: all 0.3s ease;
+  background-color: transparent !important; /* Removendo o fundo */
+  padding: 0;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials a:hover {
+  color: #cccccc;
+  background-color: transparent !important;
+  transform: translateY(-0.35rem);
+  box-shadow: none;
+}
+
+/* Lista de descrições (mantendo os bullets apenas aqui) */
+ul.mt {
+  padding-left: 0;
+  text-align: center;
+  margin: 1.25rem 0;
+  width: 100%;
+}
+
+ul.mt li {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  margin-bottom: 0.85rem;
+  position: relative;
+  padding-left: 1.75rem;
+  text-align: left;
+  list-style: none;
+}
+
+ul.mt li::before {
+  content: "•";
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+  font-size: 1.75rem;
+  line-height: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 1rem 0.5rem;
+    border-radius: 0;
+    margin-bottom: 1rem;
   }
   
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;500;700&display=swap');
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
   
-  body {
-    background-color: #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    height: 100vh;
-    font-family: 'Montserrat', sans-serif;
+  .nav-links a {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    min-width: 100px;
   }
   
   .card {
-    background-color: #0d0d0d;
-    border-radius: 1.25rem;
-    width: 28.75rem;
-    padding: 2rem;
-    box-shadow: 0 0 1rem 0.5rem rgba(255, 255, 255, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
-    overflow: hidden;
-    border: 1px solid #2e2e2e;
+    padding: 1.75rem;
+    margin: 0 1rem;
   }
   
   .pfp {
-    width: 8rem;
-    height: 8rem;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
-    box-shadow: 0 0 1.5rem rgba(255, 255, 255, 0.3);
-    border: 2px solid #ffffff;
-    margin-bottom: 0.5rem;
+    width: 7rem;
+    height: 7rem;
   }
-  
-  .title {
-    color: #ffffff;
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: 0.05rem;
-    margin: 0.5rem 0;
-  }
-  
-  .desc {
-    color: #e5e5e5;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.6;
-    margin: 0.5rem 0;
-  }
-  
-  .contact-btn {
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    padding: 0.75rem 2rem;
-    border-radius: 2rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    letter-spacing: 0.05rem;
-    margin: 0.5rem 0;
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-  .contact-btn:hover {
-    background-color: transparent;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-  }
-  
-  .socials {
-    display: flex;
-    gap: 1.5rem;
-    margin: 1rem 0;
-  }
-  
-  .socials a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-  }
-  
-  .socials a:hover {
-    color: #cccccc;
-    transform: translateY(-0.25rem);
-  }
-  
-  ul {
-    list-style: none;
-    padding-left: 0;
-    text-align: center;
-    margin: 1rem 0;
-    width: 100%;
-  }
-  
-  ul li {
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    margin-bottom: 0.75rem;
-    position: relative;
-    padding-left: 1.5rem;
-    text-align: left;
-  }
-  
-  ul li::before {
-    content: "•";
-    color: #ffffff;
-    position: absolute;
-    left: 0;
-    font-size: 1.5rem;
-    line-height: 1;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+}

@@ -34,7 +34,7 @@
     height: 8rem;
     border-radius: 50%;
     object-fit: cover;
-    object-position: top; /* Foca a parte superior da imagem */
+    object-position: top;
     box-shadow: 0 0 1.5rem rgba(255, 255, 255, 0.3);
     border: 2px solid #ffffff;
     margin-bottom: 0.5rem;
@@ -71,6 +71,8 @@
     transition: all 0.3s ease;
     letter-spacing: 0.05rem;
     margin: 0.5rem 0;
+    text-decoration: none;
+    display: inline-block;
   }
   
   .contact-btn:hover {
@@ -117,7 +119,7 @@
   
   ul li::before {
     content: "•";
-    color: #ffffff; /* Bullet branco (troque para #000000 se quiser preto) */
+    color: #ffffff;
     position: absolute;
     left: 0;
     font-size: 1.5rem;

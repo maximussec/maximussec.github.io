@@ -33,13 +33,13 @@ body {
   z-index: 100;
   width: calc(100% - 40px); 
   max-width: 30rem; 
-  box-shadow: 0 0 0.2rem 0.1rem rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0.2rem 0.1rem rgba(255, 255, 255, 0.08); 
   border: 1px solid #2e2e2e;
   margin: 0 auto 2rem; 
 }
 
 .navbar:hover {
-  box-shadow: 0 0 1rem 1rem rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 1rem 0.4rem rgba(255, 255, 255, 0.12); 
 }
 
 .nav-links {

@@ -199,8 +199,7 @@ body {
 
 .socials a:hover {
   color: #cccccc;
-  transform: translateY(-0.35rem);
-    transform: scale(1.05);
+  transform: translateY(-0.25rem);
 }
 
 ul.mt {

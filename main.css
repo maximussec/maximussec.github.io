@@ -239,7 +239,6 @@ ul.mt li::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
   color: #ffffff;
 }
 
@@ -287,8 +286,8 @@ ul.mt li::before {
   align-items: center;
   gap: 1.25rem;
   width: 100%;
-  max-width: 40rem;
-  background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+  max-width: 40vw;
+  height: 40vw;
   border-radius: 1.25rem;
   padding: 2.5rem;
   box-shadow: 0.1px 0.1px 0.1px 0.1px rgba(255, 255, 255, 0.15);
@@ -379,7 +378,6 @@ ul.mt li::before {
   align-items: center;
   padding: 6rem 1rem;
   color: #fff;
-  background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
 }
 
 @keyframes fadeUp {

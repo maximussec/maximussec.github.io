@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background-color: #000000;
+  background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
   font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
   display: flex;
@@ -35,6 +35,7 @@ body {
   width: 100%;
   max-width: 30rem;
   padding: 1.5rem 1rem;
+  background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
   border-radius: 1.25rem;
   z-index: 1000;
   box-shadow: 0 0 0.3rem 0.1rem rgba(255, 255, 255, 0.08);
@@ -96,7 +97,8 @@ body {
 .project-card {
   border-radius: 1.25rem;
   padding: 2.5rem;
-  box-shadow: 0 0 0.5rem 0.2rem rgba(255, 255, 255, 0.08);
+  background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+  box-shadow: 0.1px 0.1px 0.1px 0.1px rgba(255, 255, 255, 0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,7 +117,7 @@ body {
 .card:hover,
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 1.2rem 0.6rem rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0.4rem 0.4rem rgba(255, 255, 255, 0.15);
 }
 
 .pfp {
@@ -297,7 +299,7 @@ ul.mt li::before {
 }
 
 .contact-form:hover {
-  box-shadow: 0 0 1.2rem 0.6rem rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0.4rem 0.4rem rgba(255, 255, 255, 0.15);
   transform: translateY(-5px);
 }
 
@@ -362,9 +364,8 @@ ul.mt li::before {
 
 .contact-form button:hover,
 .contact-form button:focus {
-  transform: scale(1.05);
   background-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 1rem 0.4rem rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0.4rem 0.4rem rgba(255, 255, 255, 0.15);
   transform: scale(1.05);
   outline: none;
 }

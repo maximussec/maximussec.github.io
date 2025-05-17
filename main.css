@@ -200,6 +200,7 @@ body {
 .socials a:hover {
   color: #cccccc;
   transform: translateY(-0.35rem);
+    transform: scale(1.05);
 }
 
 ul.mt {
@@ -363,6 +364,7 @@ ul.mt li::before {
 
 .contact-form button:hover,
 .contact-form button:focus {
+  transform: scale(1.05);
   background-color: rgba(255, 255, 255, 0.25);
   box-shadow: 0 0 1rem 0.4rem rgba(255, 255, 255, 0.12);
   transform: scale(1.05);

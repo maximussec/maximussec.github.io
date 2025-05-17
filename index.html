@@ -87,6 +87,40 @@
       </div>
     </section>
   </main>
+  <footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <p>&copy; <span id="year"></span> Maximus. Todos os direitos reservados.</p>
+    </div>
+    
+    <div class="footer-section">
+      <div class="validators">
+        <p>
+          <a href="https://jigsaw.w3.org/css-validator/validator?lang=pt-BR&profile=css3svg&uri=https%3A%2F%2Fmaximussec.github.io%2F&usermedium=all&vextwarning=&warning=1" target="_blank">
+            <img style="border:0;width:88px;height:31px"
+                 src="https://jigsaw.w3.org/css-validator/images/vcss-blue" 
+                 alt="CSS válido!" />
+          </a>
+        </p>
+        <p>
+          <a href="https://jigsaw.w3.org/css-validator/validator?lang=pt-BR&profile=css3svg&uri=https%3A%2F%2Fmaximussec.github.io%2F&usermedium=all&vextwarning=&warning=1" target="_blank">
+            <img src="https://www.w3.org/Icons/valid-html401" 
+                 alt="Valid HTML!" 
+                 style="border:0;width:88px;height:31px"/>
+          </a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer-section">
+      <p>Desenvolvido por Maximus</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>

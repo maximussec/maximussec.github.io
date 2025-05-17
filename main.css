@@ -30,9 +30,9 @@ body {
 .navbar {
   position: fixed;
   top: 0;
-  left: 49vw;
-  width: 100vw;
-  transform: translateX(-51.8%);
+  width: 30rem; 
+  left: 50%;
+  transform: translateX(-50%);
   max-width: 25vw;
   padding: 1.5rem 1rem;
   background: linear-gradient(145deg, #0a0a0a, #1a1a1a);

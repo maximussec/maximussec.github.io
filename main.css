@@ -20,9 +20,11 @@ body {
 
 .content-wrapper {
   width: 100%;
-  max-width: 28.75rem;
+  max-width: 31rem;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   padding: 20px;
 }
@@ -30,7 +32,7 @@ body {
 .navbar {
   position: fixed;
   top: 0;
-  left: 50%;
+  left: 49%;
   transform: translateX(-50%);
   width: 100%;
   max-width: 30rem;
@@ -370,7 +372,8 @@ ul.mt li::before {
 }
 
 #contato {
-  min-height: 80vh;
+  min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;

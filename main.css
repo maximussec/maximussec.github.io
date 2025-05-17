@@ -289,6 +289,7 @@ ul.mt li::before {
   max-width: 30rem;
   border-radius: 1.25rem;
   padding: 2.5rem;
+  background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
   box-shadow: 0.1px 0.1px 0.1px 0.1px rgba(255, 255, 255, 0.15);
   border: 1px solid #2e2e2e;
   text-align: center;

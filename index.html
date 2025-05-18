@@ -9,16 +9,6 @@
 <body>
 
   <body>
-  <!-- SVG para bordas suaves - adicione no início do body -->
-  <svg width="0" height="0" style="position:absolute;">
-    <defs>
-      <clipPath id="smoothCorners" clipPathUnits="objectBoundingBox">
-        <path d="M0,0.05 C0,0 0,0 0.05,0 H0.95 C1,0 1,0 1,0.05 V0.95 C1,1 1,1 0.95,1 H0.05 C0,1 0,1 0,0.95 V0.05 Z"/>
-      </clipPath>
-    </defs>
-  </svg>
-
-
   <header>
     <nav class="navbar">
       <ul class="nav-links">
@@ -62,8 +52,10 @@
       </div>
     </section>
 
-    <section id="projetos" class="projects-section">
-      <h2 class="projects-title">Projetos</h2>
+  <section id="projetos" class="projects-section">
+  <div class="card title-card">
+    <h2 class="title">Projetos</h2>
+  </div>
       <div class="projects-grid">
         <div class="project-card">
           <img src="images/projeto3.png" alt="Imagem do Projeto 1" class="project-img">
@@ -86,7 +78,10 @@
       </div>
     </section>
 
-    <section id="contato" class="content-wrapper">
+<section id="contato" class="content-wrapper">
+  <div class="card title-card">
+    <h2 class="title">Contato</h2>
+  </div>
       <div class="contact-form">
         <h2 class="title">Me envie um e-mail!</h2>
         <form action="https://formsubmit.co/alexandre.maximus.dev@outlook.com" method="POST" style="width: 100%;">

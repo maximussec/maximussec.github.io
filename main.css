@@ -12,19 +12,25 @@ body {
   background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
   font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
-  display: flex;
+  display: block;
   flex-direction: column;
-  padding-top: 5.5rem;
+  padding: 5.5rem 0 0;
   color: #fff;
+  overflow-x: hidden;
+}
+
+section {
+  scroll-margin-top: 6rem;
 }
 
 .content-wrapper {
-  width: 100%;
   max-width: 30rem;
   margin: 0 auto;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  box-sizing: border-box;
+  position: relative; 
 }
 
 .navbar {
@@ -32,15 +38,16 @@ body {
   top: 0;
   width: 30rem; 
   left: 50%;
+  box-sizing: border-box;
   transform: translateX(-50%);
-  max-width: 80vw;
+  max-width: 30rem
   padding: 1.5rem 1rem;
   background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
-  border-radius: 1.25rem;
+  border-radius: 0.2rem;
   z-index: 1000;
   box-shadow: 0 0 0.3rem 0.1rem rgba(255, 255, 255, 0.08);
   border: 1px solid #2e2e2e;
-  margin: 0 auto;
+  margin: 4px auto;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
@@ -53,7 +60,7 @@ body {
   justify-content: center;
   gap: 2.5rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 0;
   list-style: none;
 }
@@ -65,7 +72,7 @@ body {
   font-size: 1.1rem;
   font-weight: 500;
   padding: 0.75rem 1.75rem;
-  border-radius: 1.25rem;
+  border-radius: 0.2rem;
   transition: all 0.3s ease;
   min-width: 120px;
   text-align: center;
@@ -89,13 +96,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 20px 6rem;
   width: 100%;
+  max-width: 100%;
+  padding: 3rem 0 6rem;
+  margin: 0 auto;
 }
 
 .card,
 .project-card {
-  border-radius: 1.25rem;
+  border-radius: 0.2rem;
   padding: 2.5rem;
   background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
   box-shadow: 0.1px 0.1px 0.1px 0.1px rgba(255, 255, 255, 0.15);
@@ -112,6 +121,8 @@ body {
   opacity: 0;
   width: 100%;
   max-width: 40rem;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
 }
 
 .card:hover,
@@ -123,7 +134,7 @@ body {
 .pfp {
   width: 9rem;
   height: 9rem;
-  border-radius: 50%;
+  border-radius: 0.2rem;
   object-fit: cover;
   object-position: top;
   box-shadow: 0 0 2rem rgba(255, 255, 255, 0.4);
@@ -162,7 +173,7 @@ body {
   font-size: 1.1rem;
   font-weight: 500;
   padding: 0.75rem 1.75rem;
-  border-radius: 1.25rem;
+  border-radius: 0.2rem;
   transition: all 0.3s ease;
   min-width: 10rem;
   text-align: center;
@@ -206,21 +217,18 @@ body {
 }
 
 ul.mt {
-  padding-left: 0;
-  text-align: center;
-  margin: 1.25rem 0;
-  width: 100%;
+  padding-left: 1.5rem; 
+  list-style: none; 
 }
 
 ul.mt li {
+  position: relative;
+  padding-left: 1.5rem; 
+  margin-bottom: 0.85rem;
+  text-align: left;
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
-  margin-bottom: 0.85rem;
-  position: relative;
-  padding-left: 1.75rem;
-  text-align: left;
-  list-style: none;
 }
 
 ul.mt li::before {
@@ -228,12 +236,10 @@ ul.mt li::before {
   color: #ffffff;
   position: absolute;
   left: 0;
-  font-size: 1.75rem;
-  line-height: 1;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
+  font-size: 1.5rem;
+  line-height: 1.6;
 }
-
 .projects-section {
   width: 100%;
   min-height: 100vh;
@@ -276,7 +282,7 @@ ul.mt li::before {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  border-radius: 0.75rem;
+  border-radius: 0.2rem;
   margin-bottom: 1rem;
   border: 1px solid #2e2e2e;
   box-shadow: 0 0 0.4rem rgba(255, 255, 255, 0.1);
@@ -289,7 +295,7 @@ ul.mt li::before {
   gap: 1.25rem;
   width: 100%;
   max-width: 30rem;
-  border-radius: 1.25rem;
+  border-radius: 0.2rem;
   padding: 2.5rem;
   background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
   box-shadow: 0.1px 0.1px 0.1px 0.1px rgba(255, 255, 255, 0.15);
@@ -311,7 +317,7 @@ ul.mt li::before {
   margin-bottom: 2rem;
   width: 100%;
   padding: 1rem 1.25rem;
-  border-radius: 1rem;
+  border-radius: 0.2rem;
   border: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.05rem;
@@ -334,7 +340,7 @@ ul.mt li::before {
   font-size: 1.1rem;
   font-weight: 500;
   padding: 0.75rem 1.75rem;
-  border-radius: 1.25rem;
+  border-radius: 0.2rem;
   transition: all 0.3s ease;
   min-width: 10rem;
   text-align: center;
@@ -356,7 +362,7 @@ ul.mt li::before {
   background: rgba(255, 255, 255, 0.15);
   transition: width 0.4s ease, bottom 0.4s ease;
   z-index: -1;
-  border-radius: 1.25rem;
+  border-radius: 0.2rem;
 }
 
 .contact-form button:hover::before {
@@ -380,6 +386,7 @@ ul.mt li::before {
   align-items: center;
   padding: 6rem 1rem;
   color: #fff;
+  overflow-anchor: none;
 }
 
 @keyframes fadeUp {
@@ -426,7 +433,7 @@ ul.mt li::before {
 .site-footer {
   font-family: 'Montserrat', sans-serif; 
   background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
-  border-radius: 1.25rem; 
+  border-radius: 0.2rem; 
   border: 1px solid #3e3e3e; 
   padding: 2rem;
   margin: 3rem auto 1rem;

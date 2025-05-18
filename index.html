@@ -2,11 +2,22 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Portfólio - Maximus (Atividade IntroWeb)</title>
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
+
+  <body>
+  <!-- SVG para bordas suaves - adicione no início do body -->
+  <svg width="0" height="0" style="position:absolute;">
+    <defs>
+      <clipPath id="smoothCorners" clipPathUnits="objectBoundingBox">
+        <path d="M0,0.05 C0,0 0,0 0.05,0 H0.95 C1,0 1,0 1,0.05 V0.95 C1,1 1,1 0.95,1 H0.05 C0,1 0,1 0,0.95 V0.05 Z"/>
+      </clipPath>
+    </defs>
+  </svg>
+
 
   <header>
     <nav class="navbar">
@@ -24,9 +35,9 @@
         <img src="images/profile.png" alt="Foto de Maximus" class="pfp">
         <h1 class="title">Maximus</h1>
         <ul class="mt">
-          <li class="desc">Graduando em Sistemas de Informação</li>
+          <li class="desc">Graduando em Sistemas de Informação pelo Instituto Federal de Alagoas - Campus Arapiraca</li>
           <li class="desc">Aprendendo C e JavaScript</li>
-          <li class="desc">Domínio pleno de Inglês, Português e Espanhol</li>
+          <li class="desc">Domínio pleno de Inglês, Espanhol e Português</li>
         </ul>
 
         <a href="https://wa.me/5582999903526" target="_blank" class="contact-btn">Contato</a>

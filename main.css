@@ -507,6 +507,15 @@ ul.mt li::before {
     gap: 1rem;
     margin: 1rem 0;
   }
+
+    .navbar {
+    width: 92%; 
+    max-width: 30rem; 
+    padding: 0.8rem 0.5rem;
+    border-radius: 0; 
+    margin: 0 auto; 
+  }
+
 }
 
 @keyframes fadeIn {
@@ -550,13 +559,3 @@ ul.mt li::before {
 .projects-section {
   padding: 1rem 1rem 8rem;
 }
-
-@media (max-width: 768px) {
-  .navbar {
-    width: 80%; 
-    max-width: 30rem; 
-    padding: 0.8rem 0.5rem;
-    border-radius: 0; 
-    margin: 0 auto; 
-  }
-   }

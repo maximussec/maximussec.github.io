@@ -1,280 +1,570 @@
-:root {
-    /* Cores baseadas no seu tema de portfólio */
-    --text-color: #e0e0e0; /* ou #fff */
-    --text-desc-color: #e5e5e5; /* para parágrafos de descrição */
-    --primary-highlight-color: #6cb2f7; /* Um azul claro para títulos e destaques */
-    
-    --input-bg-color: #222;
-    --input-text-color: #fff;
-    --input-border-color: #2e2e2e;
-    --input-focus-bg-color: #111;
-    --input-focus-shadow-color: rgba(255,255,255,.15); /* Sombra clara para inputs em foco */
-    --input-focus-border-color: rgba(255,255,255,.25);
-
-
-    --button-bg-color: rgba(30,30,30,.8);
-    --button-text-color: white;
-    --button-hover-bg-color: rgba(255,255,255,.25);
-    --button-hover-shadow-color: rgba(255,255,255,.12);
-    --button-focus-outline-color: #fff;
-
-    --card-border-color: #2e2e2e;
-    --card-shadow-color: rgba(255,255,255,.15);
-    
-    --result-bg-color: rgba(255, 255, 255, 0.05);
-    --result-border-color: var(--card-border-color);
-    --result-text-strong-color: var(--primary-highlight-color);
-
-    --result-error-bg-color: rgba(217, 83, 79, 0.1);
-    --result-error-border-color: #d9534f; 
-    --result-error-text-color: #f5c6cb;
-
-    --font-family-base: 'Montserrat', sans-serif;
-    --font-size-base: 1rem;
-    --line-height-base: 1.6;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin:0;
-    padding:0;
+html{
+  scroll-padding-top:6rem
 }
 
-html {
-    scroll-padding-top: 1rem; /* Ajustado, já que não temos navbar alta */
+body{
+  background:linear-gradient(145deg,#0a0a0a,#1a1a1a);
+  font-family:'Montserrat',sans-serif;
+  min-height:100vh;
+  display:block;
+  flex-direction:column;
+  padding:4rem 0 0;
+  color:#fff;
+  overflow-x:hidden
 }
 
-body {
-    background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
-    font-family: var(--font-family-base);
-    min-height: 100vh;
-    display: flex; /* Para centralizar o .container se necessário, mas o margin:auto já faz */
-    flex-direction: column; /* Para garantir que o body ocupe a altura */
-    padding: 20px; /* Espaçamento geral do body */
-    color: var(--text-color);
-    overflow-x: hidden;
+section{
+  scroll-margin-top:6rem
 }
 
-.container { /* Adaptado do .main-content e .content-wrapper */
-    flex: 1; /* Se body for flex, isso ajuda */
-    width: 100%;
-    max-width: 800px; /* Mantendo a largura do tema anterior */
-    padding: 20px 15px; /* Ajustado */
-    margin: 20px auto; /* Centraliza e adiciona margem superior/inferior */
-    border-radius: 8px; /* Mantendo o arredondamento do tema anterior */
+.main-content{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:100%;
+  max-width:100%;
+  padding:3rem 0 6rem;
+  margin:0 auto
 }
 
-header h1 {
-    color: var(--primary-highlight-color);
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2em; /* Mantendo o tamanho do tema anterior */
-    font-family: 'Playfair Display', serif; /* Usando a fonte de título do seu tema */
-    font-weight: 600;
-    letter-spacing:.05rem;
+.content-wrapper{
+  max-width:30rem;
+  margin:0 auto;
+  padding:1rem;
+  display:flex;
+  flex-direction:column;
+  box-sizing:border-box;
+  position:relative;
+  align-items:center
 }
 
-.exercicio { /* Adaptado para se parecer com .card */
-    border-radius: .2rem;
-    padding: 2.5rem;
-    background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
-    box-shadow: .1px .1px .1px .1px var(--card-shadow-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.25rem;
-    text-align: center;
-    overflow: hidden;
-    border: 1px solid var(--card-border-color);
-    margin-bottom: 30px; /* Espaçamento entre os cards */
-    transition: box-shadow .3s ease, transform .3s ease;
-    width:100%;
+.navbar{
+  position:fixed;
+  top:0;
+  width:28rem;
+  left:50%;
+  transform:translateX(-50%);
+  max-width:28rem;
+  padding:.2rem 1rem;
+  background:linear-gradient(145deg,#0a0a0a,#1a1a1a);
+  border-radius:.2rem;
+  z-index:1000;
+  box-shadow:0 0 .3rem .1rem rgba(255,255,255,.08);
+  border:1px solid #2e2e2e;
+  margin:1rem auto;
+  transition:box-shadow .3s ease,transform .3s ease
 }
 
-.exercicio:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 .4rem .4rem var(--card-shadow-color);
+.navbar:hover{
+  box-shadow:0 0 .4rem .4rem rgba(255,255,255,.15)
 }
 
-.exercicio h2 { /* Adaptado para se parecer com .project-title */
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    color: var(--text-color); /* Títulos dos cards brancos */
-    font-family: var(--font-family-base); /* Montserrat para os títulos dos cards */
+.nav-links{
+  display:flex;
+  justify-content:center;
+  gap:2.5rem;
+  max-width:1200px;
+  margin:10px auto;
+  padding:0;
+  list-style:none
 }
 
-.exercicio p { /* Adaptado para se parecer com .project-desc ou .desc */
-    font-size: 1rem; /* Ajustado */
-    color: var(--text-desc-color);
-    line-height: 1.7;
-    margin-bottom: 1.25rem; /* Mantendo o gap do card */
+.nav-links a{
+  background-color:rgba(30,30,30,.8);
+  color:white;
+  text-decoration:none;
+  font-size:1.1rem;
+  font-weight:500;
+  padding:.75rem 1.75rem;
+  border-radius:.2rem;
+  transition:all .3s ease;
+  min-width:1rem;
+  text-align:center;
+  display:inline-block
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500; /* Ajustado */
-    color: var(--text-desc-color); /* Labels um pouco mais suaves */
-    font-size: 0.9em;
-    text-align: left; /* Alinha labels à esquerda */
-    width: 100%;
+.nav-links a:hover,
+.nav-links a:focus{
+  background-color:rgba(255,255,255,.25);
+  box-shadow:0 0 1rem .4rem rgba(255,255,255,.12);
+  transform:scale(1.05)
 }
 
-.form-grid {
-    display: grid;
-    gap: 15px;
-    margin-bottom: 1.25rem; /* Mantendo o gap do card */
-    width: 100%;
+.nav-links a:focus{
+  outline:3px solid #fff;
+  outline-offset:3px
 }
 
-/* Adaptação dos inputs e textareas para os exercícios */
-.form-grid input[type="number"],
-.form-grid input[type="text"],
-.exercicio > div > input[type="number"], /* Para inputs únicos */
-.exercicio > div > input[type="text"] {
-    width: 100%;
-    padding: .75rem 1rem; /* Ajustado do .contact-form input */
-    border-radius: .2rem;
-    border: 1px solid var(--input-border-color); /* Borda sutil */
-    font-family: var(--font-family-base);
-    font-size: 1rem; /* Ajustado */
-    background: var(--input-bg-color);
-    color: var(--input-text-color);
-    transition: background .3s ease, box-shadow .3s ease, border-color .3s ease;
+.card{
+  border-radius:.2rem;
+  padding:2.5rem;
+  background:linear-gradient(145deg,#0a0a0a,#1a1a1a);
+  box-shadow:.1px .1px .1px .1px rgba(255,255,255,.15);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1.25rem;
+  text-align:center;
+  overflow:hidden;
+  border:1px solid #2e2e2e;
+  margin:0 auto;
+  transition:box-shadow .3s ease,transform .3s ease;
+  animation:fadeUp .6s ease forwards;
+  opacity:0;
+  width:100%;
+  max-width:40rem;
+  transform:translate3d(0,0,0);
+  will-change:transform
 }
 
-.form-grid input[type="number"]::placeholder,
-.form-grid input[type="text"]::placeholder,
-.exercicio > div > input[type="number"]::placeholder,
-.exercicio > div > input[type="text"]::placeholder {
-    color: var(--text-desc-color);
-    opacity: 0.7;
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 .4rem .4rem rgba(255,255,255,.15)
 }
 
-
-.form-grid input[type="number"]:focus,
-.form-grid input[type="text"]:focus,
-.exercicio > div > input[type="number"]:focus,
-.exercicio > div > input[type="text"]:focus {
-    outline: none;
-    box-shadow: 0 0 .15rem var(--input-focus-shadow-color);
-    background: var(--input-focus-bg-color);
-    border-color: var(--input-focus-border-color);
+.pfp{
+  width:9rem;
+  height:9rem;
+  border-radius:.2rem;
+  object-fit:cover;
+  object-position:top;
+  box-shadow:0 0 2rem rgba(255,255,255,.4);
+  border:2px solid #fff;
+  margin-bottom:.75rem;
+  transition:transform .3s ease
 }
 
-/* Para inputs que não estão no form-grid (caso de um único input por exercício) */
-.exercicio > div > input[type="text"],
-.exercicio > div > input[type="number"] {
-    max-width: 300px; /* Limita a largura de inputs únicos */
-    margin-left: auto;
-    margin-right: auto;
-    display: block; /* Para centralizar com margin auto */
+.pfp:hover{
+  transform:scale(1.05)
 }
 
-.form-grid-two-cols { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-.form-grid-three-cols { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
-#titulo-ex1 + p + .form-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
-
-
-button { /* Adaptado do .contact-btn ou .project-btn */
-    background-color: var(--button-bg-color);
-    text-decoration: none;
-    color: var(--button-text-color);
-    font-size: 1.1rem;
-    font-weight: 500;
-    padding: .75rem 1.75rem;
-    border-radius: .2rem;
-    transition: all .3s ease;
-    min-width: 10rem;
-    text-align: center;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
+.title{
+  color:#fff;
+  font-family:'Playfair Display',serif;
+  font-size:2.25rem;
+  font-weight:600;
+  letter-spacing:.05rem;
+  margin:.75rem 0
 }
 
-button:hover, button:focus {
-    background-color: var(--button-hover-bg-color);
-    box-shadow: 0 0 1rem .4rem var(--button-hover-shadow-color);
-    transform: scale(1.05);
+.desc{
+  color:#e5e5e5;
+  font-family:'Montserrat',sans-serif;
+  font-size:1.05rem;
+  font-weight:300;
+  line-height:1.7;
+  margin:.75rem 0
 }
 
-button:focus {
-    outline: 3px solid var(--button-focus-outline-color);
-    outline-offset: 3px;
-}
-/* Ajuste para botões dentro do .exercicio (card) */
-.exercicio button {
-    min-width: auto; /* Permite que o botão se ajuste ao conteúdo */
-    padding: .75rem 1.5rem; 
+ul.mt{
+  padding-left:1.5rem;
+  list-style:none
 }
 
-
-.resultado {
-    margin-top: 1.25rem;
-    padding: 1rem;
-    background-color: var(--result-bg-color);
-    border: 1px solid var(--result-border-color);
-    border-radius: .2rem;
-    color: var(--text-desc-color);
-    font-family: var(--font-family-base);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    text-align: left;
-    word-wrap: break-word;
-    width: 100%; /* Para ocupar a largura do card */
+ul.mt li{
+  position:relative;
+  padding-left:1.5rem;
+  margin-bottom:.85rem;
+  text-align:left;
+  color:#fff;
+  font-family:'Montserrat',sans-serif;
+  font-weight:300
 }
 
-.resultado.error-display {
-    background-color: var(--result-error-bg-color);
-    border-left: 5px solid var(--error-color); /* Destaque de erro */
-    border-color: var(--result-error-border-color);
-    color: var(--result-error-text-color);
+ul.mt li::before{
+  content:"•";
+  color:#fff;
+  position:absolute;
+  left:0;
+  top:0;
+  font-size:1.5rem;
+  line-height:1.6
 }
 
-.resultado strong {
-    color: var(--result-text-strong-color);
-    font-weight: 600;
+.contact-btn,
+.project-btn{
+  background-color:rgba(30,30,30,.8);
+  text-decoration:none;
+  color:white;
+  font-size:1.1rem;
+  font-weight:500;
+  padding:.75rem 1.75rem;
+  border-radius:.2rem;
+  transition:all .3s ease;
+  min-width:10rem;
+  text-align:center;
+  display:inline-block
 }
 
-.resultado.error-display strong {
-    color: var(--result-error-text-color); /* Cor do strong no erro */
+.contact-btn:hover,
+.project-btn:hover,
+.contact-btn:focus,
+.project-btn:focus{
+  background-color:rgba(255,255,255,.25);
+  box-shadow:0 0 1rem .4rem rgba(255,255,255,.12);
+  transform:scale(1.05)
 }
 
-/* Responsividade do tema anterior, adaptada */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-    .container {
-        margin: 10px;
-        padding: 15px;
-    }
-    header h1 {
-        font-size: 1.8em;
-    }
-    .exercicio {
-        padding: 1.5rem;
-    }
-    .exercicio h2 {
-        font-size: 1.3em;
-    }
-    .form-grid,
-    #titulo-ex1 + p + .form-grid,
-    .form-grid-two-cols,
-    .form-grid-three-cols {
-        grid-template-columns: 1fr;
-    }
-    button {
-        width: 100%;
-        font-size: 1rem;
-        padding: .75rem 1rem;
-    }
+.contact-btn:focus,
+.project-btn:focus{
+  outline:3px solid #fff;
+  outline-offset:3px
+}
+
+.socials{
+  display:flex;
+  transform:scale(1.3);
+  gap:1.2rem;
+  justify-content:center;
+  margin:1.25rem 0
+}
+
+.socials a{
+  color:#fff;
+  font-size:2rem;
+  transition:transform .3s ease,color .3s ease
+}
+
+.socials a:hover{
+  color:#ccc;
+  transform:translateY(-.25rem)
+}
+
+.projects-section{
+  width:100%;
+  min-height:100vh;
+  padding:1rem 1rem 8rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  color:#fff
+}
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:3rem;
+  width:100%;
+  max-width:70vw;
+  padding-top:3rem
+}
+
+.project-card{
+  border-radius:.2rem;
+  padding:2.5rem;
+  background:linear-gradient(145deg,#0a0a0a,#1a1a1a);
+  box-shadow:.1px .1px .1px .1px rgba(255,255,255,.15);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1.25rem;
+  text-align:center;
+  overflow:hidden;
+  border:1px solid #2e2e2e;
+  margin:0 auto;
+  transition:box-shadow .3s ease,transform .3s ease;
+  animation:fadeUp .6s ease forwards;
+  opacity:0;
+  width:100%;
+  max-width:40rem;
+  transform:translate3d(0,0,0);
+  will-change:transform
+}
+
+.project-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 .4rem .4rem rgba(255,255,255,.15)
+}
+
+.project-title{
+  font-size:1.5rem;
+  margin-bottom:1rem;
+  font-weight:600
+}
+
+.project-desc{
+  font-size:1rem;
+  color:#e0e0e0;
+  line-height:1.5
+}
+
+.project-img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:.2rem;
+  margin-bottom:1rem;
+  border:1px solid #2e2e2e;
+  box-shadow:0 0 .4rem rgba(255,255,255,.1)
+}
+
+#contato{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:0 1rem 6rem;
+  color:#fff
+}
+
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top:2rem;
+  gap:1.25rem;
+  width:100%;
+  max-width:30rem;
+  border-radius:.2rem;
+  padding:2.5rem;
+  background:linear-gradient(145deg,#0a0a0a,#1a1a1a);
+  box-shadow:.1px .1px .1px .1px rgba(255,255,255,.15);
+  border:1px solid #2e2e2e;
+  text-align:center;
+  transition:box-shadow .3s ease,transform .3s ease;
+  animation:fadeUp .6s ease forwards;
+  opacity:0
+}
+
+.contact-form:hover{
+  box-shadow:0 0 .4rem .4rem rgba(255,255,255,.15);
+  transform:translateY(-5px)
+}
+
+.contact-form input,
+.contact-form textarea{
+  margin-top:1rem;
+  margin-bottom:2rem;
+  width:100%;
+  padding:1rem 1.25rem;
+  border-radius:.2rem;
+  border:none;
+  font-family:'Montserrat',sans-serif;
+  font-size:1.05rem;
+  resize:vertical;
+  background:#222;
+  color:#fff;
+  transition:background .3s ease,box-shadow .3s ease
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline:none;
+  box-shadow:0 0 .15rem rgba(255,255,255,.2);
+  background:#111
+}
+
+.contact-form button{
+  background-color:rgba(30,30,30,.8);
+  color:white;
+  font-size:1.1rem;
+  font-weight:500;
+  padding:.75rem 1.75rem;
+  border-radius:.2rem;
+  transition:all .3s ease;
+  min-width:10rem;
+  text-align:center;
+  border:none;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  z-index:1
+}
+
+.contact-form button::before{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:0%;
+  height:100%;
+  background:rgba(255,255,255,.15);
+  transition:width .4s ease,bottom .4s ease;
+  z-index:-1;
+  border-radius:.2rem
+}
+
+.contact-form button:hover::before{
+  width:100%;
+  bottom:100%
+}
+
+.contact-form button:hover,
+.contact-form button:focus{
+  background-color:rgba(255,255,255,.25);
+  box-shadow:0 0 .4rem .4rem rgba(255,255,255,.15);
+  transform:scale(1.05);
+  outline:none
+}
+
+.site-footer{
+  font-family:'Montserrat',sans-serif;
+  background:linear-gradient(145deg,#0a0a0a,#1a1a1a);
+  border-radius:.2rem;
+  border:1px solid #3e3e3e;
+  padding:2rem;
+  margin:3rem auto 1rem;
+  width:90%;
+  max-width:1200px;
+  box-shadow:0 .1rem .3rem rgba(255,255,255,.1);
+  animation:fadeIn .6s ease-out forwards
+}
+
+.site-footer:hover{
+  box-shadow:0 0 .4rem .4rem rgba(255,255,255,.15)
+}
+
+.footer-content{
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:1.5rem
+}
+
+.footer-section{
+  flex:1;
+  min-width:200px;
+  text-align:center;
+  padding:1rem
+}
+
+.footer-section p{
+  color:#f0f0f0;
+  font-size:.95rem;
+  margin:.5rem 0;
+  line-height:1.6;
+  letter-spacing:.03rem
+}
+
+.validators{
+  display:flex;
+  justify-content:center;
+  gap:1.5rem;
+  flex-wrap:wrap
+}
+
+.site-footer a{
+  transition:all .3s ease;
+  color:#fff;
+  text-decoration:none
+}
+
+.site-footer a:hover{
+  opacity:.8;
+  text-shadow:0 0 8px rgba(255,255,255,.3)
+}
+
+.validators img{
+  filter:grayscale(150%) brightness(1.1);
+  transition:all .3s ease;
+  opacity:.9
+}
+
+.validators img:hover{
+  filter:grayscale(50%) brightness(1.3);
+  opacity:1;
+  transform:scale(1.2)
+}
+
+.title-card{
+  width:100%;
+  max-width:28rem;
+  padding:1.5rem;
+  margin-top:4rem;
+  margin-bottom:2rem;
+  text-align:center;
+  animation:none;
+  opacity:1
+}
+
+.title-card .title{
+  margin:0;
+  font-size:2rem
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(1rem)
+  }
+  to{
+    opacity:1;
+    transform:translateY(0)
+  }
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(10px)
+  }
+  to{
+    opacity:1;
+    transform:translateY(0)
+  }
+}
 
 @media (max-width:600px){
-    .exercicio{ padding:1.75rem; margin:0 1rem 30px; }
-    .exercicio h2 { font-size: 1.2rem; }
-    .exercicio p { font-size: 0.9rem; }
+  .navbar{
+    padding:1rem .5rem;
+    border-radius:0;
+    width:99%;
+    max-width:30rem
+  }
+
+  .nav-links{
+    gap:1rem;
+    flex-wrap:wrap
+  }
+
+  .nav-links a{
+    padding:.6rem 1.2rem;
+    font-size:1rem;
+    min-width:100px
+  }
+
+  .card,
+  .contact-form{
+    padding:1.75rem;
+    margin:0 1rem
+  }
+
+  .pfp{
+    width:7rem;
+    height:7rem
+  }
+
+  .projects-grid{
+    max-width:90vw;
+    gap:1.5rem
+  }
+}
+
+@media (max-width:768px){
+  .site-footer{
+    width:95%;
+    padding:1.5rem
+  }
+
+  .footer-content{
+    flex-direction:column
+  }
+
+  .footer-section{
+    width:100%;
+    padding:.5rem
+  }
+
+  .validators{
+    gap:1rem;
+    margin:1rem 0
+  }
 }

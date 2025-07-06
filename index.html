@@ -96,7 +96,6 @@
     <div class="footer-section">
       <p>&copy; <span id="year"></span> Maximus. Todos os direitos reservados.</p>
     </div>
-    
     <div class="footer-section">
       <div class="validators">
         <p>
@@ -111,16 +110,25 @@
         </p>
       </div>
     </div>
-    
     <div class="footer-section">
       <p>Desenvolvido para avaliação na disciplina de Introdução às Tecnologias Web por Alexandre Maximus Nunes Melo</p>
     </div>
   </div>
 </footer>
-
+<div id="floating-newsletter" class="card-base">
+        <button class="close-btn" aria-label="Fechar Newsletter">&times;</button>
+        <h2 class="title" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Newsletter</h2>
+        <p class="desc" style="font-size: 0.9rem; margin-top: 0;">Receba atualizações sobre meus projetos.</p>
+        <form action="#" method="POST" class="newsletter-form">
+            <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+            <button type="submit" class="project-btn">Inscrever</button>
+        </form>
+    </div>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
+<script src="newsletter.js" defer></script>
 
 </body>
 </html>

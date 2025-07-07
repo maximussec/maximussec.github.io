@@ -739,6 +739,12 @@ ul.mt li::before {
     border: 1px solid #3e3e3e;
 }
 
+#floating-newsletter:hover {
+    box-shadow:0 0 .4rem .4rem rgba(255,255,255,.15)
+}
+
+
+
 #floating-newsletter.hidden {
     opacity: 0;
     transform: scale(0.9);
@@ -779,6 +785,7 @@ ul.mt li::before {
     width: 100%;
     gap: 0.8rem;
 }
+
 
 .newsletter-form input[type="email"] {
     width: 100%;

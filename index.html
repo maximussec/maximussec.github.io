@@ -123,19 +123,19 @@
         </div>
     </footer>
 
-    <div id="floating-newsletter" class="card-base">
-        <button class="close-btn" aria-label="Fechar Newsletter">&times;</button>
-        <h2 class="title" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Newsletter</h2>
-        <p class="desc" style="font-size: 0.9rem; margin-top: 0;">Receba atualizações sobre meus projetos.</p>
-        <form id="newsletter-form" action="" method="POST" target="_blank" class="newsletter-form">
-            <div>
-                <input type="email" id="newsletter-email" name="EMAIL" placeholder="Seu melhor e-mail">
-                <span class="error-message" id="newsletter-error"></span>
-            </div>
-            <button type="submit" class="project-btn">Inscrever</button>
-            <div class="form-success-message" id="newsletter-success"></div>
-        </form>
-    </div>
+        <div id="floating-newsletter" class="card-base">
+            <button class="close-btn" aria-label="Fechar Newsletter">&times;</button>
+            <h2 class="title" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Newsletter</h2>
+            <p class="desc" style="font-size: 0.9rem; margin-top: 0;">Receba atualizações sobre meus projetos.</p>
+            
+            <form id="newsletter-form" action="https://formsubmit.co/alexandre.maximus.dev@outlook.com" method="POST" class="newsletter-form">
+                
+                <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+                <input type="hidden" name="_subject" value="Nova Inscrição na Newsletter!">
+                <input type="text" name="_honey" style="display:none">
+                <button type="submit" class="project-btn">Inscrever</button>
+            </form>
+        </div>
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();

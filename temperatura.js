@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'kelvin':
                 valueInCelsius = value - 273.15;
                 break;
-            default: // 'celsius'
+            default: 
                 valueInCelsius = value;
                 break;
         }

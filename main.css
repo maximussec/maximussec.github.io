@@ -805,3 +805,13 @@ ul.mt li::before{
     width: 100%;
     min-width: auto;
 }
+
+.theme-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: transform .2s ease;
+    color: var(--color-text-light); /* Garante que o ícone tenha a cor do tema */
+}
